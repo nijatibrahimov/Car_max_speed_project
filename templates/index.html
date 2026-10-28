@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Top Speed Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg">
+    <div class="form-container">
+        <h1>Predict Car Top Speed</h1>
+        <form method="post" id="predict-form">
+            <p>Engine Capacity (liters): <input type="number" name="engine" required step="any"></p>
+            <p>Cylinders:<br> <input type="number" name="cylinders" required></p>
+            <p>Horsepower (bhp): <input type="number" name="horsepower" required></p>
+            <p>Torque (Nm): <input type="number" name="torque" required></p>
+            <p>Length (meters): <input type="number" name="length" required step="any"></p>
+            <p>Width (meters): <input type="number" name="width" required step="any"></p>
+            <p>Height (meters): <input type="number" name="height" required step="any"></p>
+            <p>Wheelbase (meters): <input type="number" name="wheelbase" required step="any"></p>
+
+            <p>
+            Drive Type:<br>
+            <select name="drive" id="f">
+                <option value="Front">Front Wheel Drive</option>
+                <option value="Rear">Rear Wheel Drive</option>
+                <option value="All">All Wheel Drive</option>
+            </select><br><br>
+
+            Transmission:<br>
+            <select name="transmission" id="f">
+                <option value="CVT">CVT</option>
+                <option value="Manual">Manual</option>
+                <option value="Auto">Auto</option>
+            </select><br><br>
+
+            Fuel Type:<br>
+            <select name="fuel" id="f">
+                <option value="Hybrid">Hybrid</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+            </select><br><br></p>
+
+            <input type="submit" value="Predict" id="b">
+        </form>
+        <h3>{{ prediction }}</h3>
+        <h3>{{ feasibility }}</h3>
+    </div>
+</body>
+</html>
